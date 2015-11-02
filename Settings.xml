@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+
+  <applicationkey>warwick.123.1.0.0.release</applicationkey>
+  <secret>131020025141141111114159116232068096244046069035060223142143146103109108144178114003025006151055186219108027061017064196074152184189202142134021</secret>
+  <user>wayne.bryan@warwickfulfillment.com</user>
+  <password>123232164175172078228154251194190025232093018188</password>
+
+  <apiurl>https://home.mozu.com/api/platform</apiurl>
+
+</settings>
