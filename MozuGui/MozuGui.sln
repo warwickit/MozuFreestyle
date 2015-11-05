@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozuGui", "MozuGui.csproj", "{C9179255-4F03-4E2A-B50D-B35BFC329E10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozu", "..\Mozu.csproj", "{6E5CA6A7-EEF7-40DA-A25A-3CF5B88047D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozu.Api", "..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj", "{0463AABF-9E78-409E-8AB4-AEDA56E53508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozuFreeStyleInterface", "..\MozuFreeStyleInterface\MozuFreeStyleInterface.csproj", "{999AAA28-1330-41A5-8CA3-5611E487768D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{C9179255-4F03-4E2A-B50D-B35BFC329E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9179255-4F03-4E2A-B50D-B35BFC329E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9179255-4F03-4E2A-B50D-B35BFC329E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5CA6A7-EEF7-40DA-A25A-3CF5B88047D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5CA6A7-EEF7-40DA-A25A-3CF5B88047D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5CA6A7-EEF7-40DA-A25A-3CF5B88047D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5CA6A7-EEF7-40DA-A25A-3CF5B88047D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0463AABF-9E78-409E-8AB4-AEDA56E53508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0463AABF-9E78-409E-8AB4-AEDA56E53508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0463AABF-9E78-409E-8AB4-AEDA56E53508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0463AABF-9E78-409E-8AB4-AEDA56E53508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999AAA28-1330-41A5-8CA3-5611E487768D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999AAA28-1330-41A5-8CA3-5611E487768D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999AAA28-1330-41A5-8CA3-5611E487768D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999AAA28-1330-41A5-8CA3-5611E487768D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
