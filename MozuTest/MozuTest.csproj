@@ -57,11 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\utilities\Utilities\2.7-Simple\Utilities.csproj">
-      <Project>{28021698-111a-4136-9020-0e255bdbd9c0}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
+    <ProjectReference Include="..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
       <Project>{0463aabf-9e78-409e-8ab4-aeda56e53508}</Project>
       <Name>Mozu.Api</Name>
     </ProjectReference>

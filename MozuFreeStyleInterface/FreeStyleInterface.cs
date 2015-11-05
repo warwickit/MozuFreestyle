@@ -8,7 +8,12 @@ namespace MozuFreeStyleInterface
     public class FreeStyleInterface
     {
         private int _system = 18;
+        
+        public FreeStyleInterface()
+        {
 
+        }
+        
 
         public void Download()
         {
@@ -74,12 +79,14 @@ namespace MozuFreeStyleInterface
         }
 
 
-        public Warehouse.Inventory[] getProducts(int page)
+        public Warehouse.Inventory[] getProducts(int page=0, string sku="")
         {
             List<Warehouse.Inventory> products = new List<Warehouse.Inventory>();
             Product[] results = null;
             Product search = new Product();
+            if (page == 0) page = 1;
             search.Page = page;
+            if (!string.IsNullOrWhiteSpace(sku)) search.ProductSku = sku;
 
             //do {
                 results = (Product[]) search.Read<Product[]>();
@@ -145,8 +152,10 @@ namespace MozuFreeStyleInterface
             product.Isbn = item.ISBN;
             product.RetailPrice = (decimal) item.Price;
             Console.WriteLine("Saving Free Style Product: " + product.ProductSku);
-            product.Create();
-            //product.Update();
+            try {
+            if (product.Exists()) product.Update();
+            else product.Create();
+            } catch { }
         }
 
 
@@ -167,7 +176,11 @@ namespace MozuFreeStyleInterface
             customer.Email = c.Email;
             customer.Fax = c.Fax;
             Console.WriteLine("Saving Free Style Customer: " + customer.FirstName + " " + customer.LastName);
-            customer.Create();
+            try {
+            if (customer.Exists()) customer.Update();
+            else customer.Create();
+            } catch { }
+            //customer.Create();
             //customer.Update();
         }
 
@@ -216,7 +229,12 @@ namespace MozuFreeStyleInterface
             order.OrderItems = items.ToArray();
             //order.Update();
             Console.WriteLine("Saving Free Style Order: " + order.OrderNumber);
-            order.Create();
+            //order.Create();
+            try {
+            if (order.Exists()) order.Update();
+            else order.Create();
+            } catch { }
+
         }
 
 

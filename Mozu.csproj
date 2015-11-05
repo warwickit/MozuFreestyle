@@ -49,6 +49,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=2.5.5764.17809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\utilities\Utilities\2.8-NoNHibernate\bin\Debug\Utilities.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationContract.cs" />
@@ -64,11 +68,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\utilities\Utilities\2.7-Simple\Utilities.csproj">
-      <Project>{28021698-111a-4136-9020-0e255bdbd9c0}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
+    <ProjectReference Include="mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
       <Project>{0463aabf-9e78-409e-8ab4-aeda56e53508}</Project>
       <Name>Mozu.Api</Name>
     </ProjectReference>

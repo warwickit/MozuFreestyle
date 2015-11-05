@@ -9,8 +9,17 @@ namespace Mozu
     {
         private Encryption _secret;
 
-        [DataMember(Name="ApplicationId"         )] public string ApplicationId          { get { return Mozu.Settings["applicationkey"]; } set { } }
-        [DataMember(Name="SharedSecret"          )] public string SharedSecret           { get { /*if (_secret == null) _secret = new AES(Mozu.Settings["secret"]); return _secret.Decrypt(); } set { throw new InvalidOperationException("Not Allowed to set Secret Key");*/ return "e5a16e65f3c7434dbbb3f166a191d71a"; } set { } }
+        [DataMember(Name="ApplicationId"         )] public string ApplicationId          { get {
+                //if (!string.IsNullOrWhiteSpace(Mozu.Username)) return Mozu.Username;
+                //else return Mozu.Settings["applicationkey"];
+                return "warwick.123.1.0.0.release";
+        } set { } }
+        [DataMember(Name="SharedSecret"          )] public string SharedSecret           { get {
+                //if (!string.IsNullOrWhiteSpace(Mozu.Password)) return Mozu.Password;
+                //if (_secret == null) _secret = new AES(Mozu.Settings["secret"]);
+                //return _secret.Decrypt();
+                return "e5a16e65f3c7434dbbb3f166a191d71a";
+        } set { /*throw new InvalidOperationException("Not Allowed to set Secret Key");*/ } }
         [DataMember(Name="refreshToken"          )] public string RefreshToken           ;
         [DataMember(Name="accessToken"           )] public string AccessToken            ;
         [DataMember(Name="accessTokenExpiration" )] public string AccessTokenExpiration  ;

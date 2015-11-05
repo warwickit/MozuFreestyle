@@ -21,6 +21,12 @@ namespace MozuFreeStyleInterface
         private string _accessToken;
 
 
+        public Mozu()
+        {
+
+        }
+        
+
         public void Download()
         {
             this.downloadProducts();
@@ -71,8 +77,9 @@ namespace MozuFreeStyleInterface
         }
 
 
-        public Warehouse.Customer[] getCustomers()
+        public Warehouse.Customer[] getCustomers(int page=1)
         {
+            if (page <= 0) page = 1;
             List<Warehouse.Customer> customerList = new List<Warehouse.Customer>();
             CustomerAccount customers = new CustomerAccount();
             CustomerAccountCollection results = (CustomerAccountCollection) MZ.Request(customers, typeof(CustomerAccountCollection));
@@ -110,15 +117,17 @@ namespace MozuFreeStyleInterface
         }
 
 
-        public Warehouse.Order[] getOrders()
+        public Warehouse.Order[] getOrders(int page=1, string orderNumber=null)
         {
             List<Warehouse.Order> orderList = new List<Warehouse.Order>();
             Order orders = new Order();
+            //if (! string.IsNullOrWhiteSpace(orderNumber)) orders.OrderNumber = Utility.getInt(orderNumber);
             OrderCollection results = (OrderCollection) MZ.Request(orders, typeof(OrderCollection));
             if (results.Items != null) {
                 foreach (Order o in results.Items) {
                     if (o.AuditInfo == null) continue;
                     if (Utility.getDateTime(o.AuditInfo.CreateDate) < new DateTime(2015, 5, 28)) continue;
+                    if (! string.IsNullOrWhiteSpace(orderNumber) && o.OrderNumber.ToString() != orderNumber) continue;
 
                     Warehouse.Order order = new Warehouse.Order();
                     order.OrderNumber = o.OrderNumber.ToString();
@@ -221,7 +230,7 @@ namespace MozuFreeStyleInterface
 
         public void saveProduct(Warehouse.Inventory item)
         {
-            /*Product product = new Product();
+            Product product = new Product();
             product.ProductCode = item.SKU;
             product.Upc = item.UPC;
             product.Price = new ProductPrice();
@@ -230,7 +239,8 @@ namespace MozuFreeStyleInterface
             product.MasterCatalogId = 1;
 
             Console.WriteLine("Saving Mozu Product: {0}", product.ProductCode);
-            MZ.Request(product, null, true);*/
+            MZ.Request(product, null, true);
+            return;
 
             this.login();
             this.getAccessToken();
@@ -421,7 +431,7 @@ namespace MozuFreeStyleInterface
         {
             string url = "https://developer.mozu.com/console/auth/posthandler ";
             string requestParams = "redirectUrl=&accessToken=" + _accessToken;
-        requestParams = "redirectUrl=&accessToken=wwdtkaa0zC3ENzufDYrK4MweQ2UvtW%2FpSuNVgXQUg9Ca3G11yDFkYw748AWVsgOFDBxQ%2BxZC4DGYaGkha%2BClyBEvyN4T78n9B5vpbJI1GP6AoQlnd0Anx87XQisyoMLNYadyOqTWmNA9xOPCdUF0IgL1uixnqQG1%2BfhP13421TxyDKrtcpKj0UQ%2B9RYkdBtiddppCw513kLMdXbswLGZGxslxlCXTis%2B20VNstlJcNhcAukbEFYzK4GrDSnE5z9qDnJ6%2BI8ynJQ5E5fgi%2FVQvDQKODQg8DNQEL4c0G6f8HfwVdo3rJCRFEIvawVKqeOF";
+        //requestParams = "redirectUrl=&accessToken=wwdtkaa0zC3ENzufDYrK4MweQ2UvtW%2FpSuNVgXQUg9Ca3G11yDFkYw748AWVsgOFDBxQ%2BxZC4DGYaGkha%2BClyBEvyN4T78n9B5vpbJI1GP6AoQlnd0Anx87XQisyoMLNYadyOqTWmNA9xOPCdUF0IgL1uixnqQG1%2BfhP13421TxyDKrtcpKj0UQ%2B9RYkdBtiddppCw513kLMdXbswLGZGxslxlCXTis%2B20VNstlJcNhcAukbEFYzK4GrDSnE5z9qDnJ6%2BI8ynJQ5E5fgi%2FVQvDQKODQg8DNQEL4c0G6f8HfwVdo3rJCRFEIvawVKqeOF";
             ASCIIEncoding encoding = new ASCIIEncoding();
             byte[] data = encoding.GetBytes(requestParams);
 

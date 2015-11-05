@@ -40,6 +40,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=2.5.5785.24780, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\utilities\Utilities\2.8-NoNHibernate\bin\Debug\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Warehouse, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Warehouse\10.0-Simple\bin\Debug\Warehouse.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FreeStyleInterface.cs" />
@@ -55,17 +63,13 @@
     <Content Include="Settings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\utilities\Utilities\2.8-NoNHibernate\Utilities.csproj">
-      <Project>{28021698-111a-4136-9020-0e255bdbd9c0}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\FreeStyle\FreeStyle.csproj">
       <Project>{a71165b1-5c56-4ff2-9f55-3c99408bf6c0}</Project>
       <Name>FreeStyle</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Warehouse\10.0-Simple\Warehouse.csproj">
-      <Project>{66ab3157-2a0c-490c-b0b4-1d23cdba9530}</Project>
-      <Name>Warehouse</Name>
+    <ProjectReference Include="..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
+      <Project>{0463aabf-9e78-409e-8ab4-aeda56e53508}</Project>
+      <Name>Mozu.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mozu.csproj">
       <Project>{6e5ca6a7-eef7-40da-a25a-3cf5b88047d8}</Project>

@@ -13,6 +13,9 @@ namespace Mozu
         private static Utilities.Settings _settings = new Utilities.Settings();
         private  static string _apiUrl  { get { return Mozu.Settings["apiurl"]; } }
         //protected object _response;
+        public static string Username;
+        public static string Password;
+
 
         public static Utilities.Settings Settings { get { return _settings; } }
 

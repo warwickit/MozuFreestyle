@@ -48,6 +48,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=2.5.5764.17809, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\utilities\Utilities\2.8-NoNHibernate\bin\Debug\Utilities.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs">
@@ -88,17 +92,21 @@
     <Content Include="warwickworks.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\utilities\Utilities\2.7-Simple\Utilities.csproj">
-      <Project>{28021698-111a-4136-9020-0e255bdbd9c0}</Project>
-      <Name>Utilities</Name>
+    <ProjectReference Include="..\..\..\FreeStyle\FreeStyle.csproj">
+      <Project>{a71165b1-5c56-4ff2-9f55-3c99408bf6c0}</Project>
+      <Name>FreeStyle</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
+    <ProjectReference Include="..\mozu-net-sdk-master\Mozu.Api\Mozu.Api.csproj">
       <Project>{0463aabf-9e78-409e-8ab4-aeda56e53508}</Project>
       <Name>Mozu.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mozu.csproj">
       <Project>{6e5ca6a7-eef7-40da-a25a-3cf5b88047d8}</Project>
       <Name>Mozu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MozuFreeStyleInterface\MozuFreeStyleInterface.csproj">
+      <Project>{999aaa28-1330-41a5-8ca3-5611e487768d}</Project>
+      <Name>MozuFreeStyleInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
