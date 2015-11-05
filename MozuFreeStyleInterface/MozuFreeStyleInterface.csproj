@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Encryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Noesis.Javascript, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ae36d046c7f89f85, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Noesis.Javascript.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,11 +50,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utilities, Version=2.5.5785.24780, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\utilities\Utilities\2.8-NoNHibernate\bin\Debug\Utilities.dll</HintPath>
+      <HintPath>..\lib\Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Warehouse, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Warehouse\10.0-Simple\bin\Debug\Warehouse.dll</HintPath>
+      <HintPath>..\lib\Warehouse.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +71,7 @@
     <Content Include="Settings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\FreeStyle\FreeStyle.csproj">
+    <ProjectReference Include="..\FreeStyle\FreeStyle.csproj">
       <Project>{a71165b1-5c56-4ff2-9f55-3c99408bf6c0}</Project>
       <Name>FreeStyle</Name>
     </ProjectReference>

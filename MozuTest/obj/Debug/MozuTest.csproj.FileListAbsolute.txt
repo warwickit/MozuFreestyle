@@ -19,4 +19,3 @@ C:\src\warehouse\Mozu\1.0\MozuTest\bin\Debug\System.Web.Http.dll
 C:\src\warehouse\Mozu\1.0\MozuTest\bin\Debug\System.Net.Http.Formatting.dll
 C:\src\warehouse\Mozu\1.0\MozuTest\bin\Debug\System.Web.Http.xml
 C:\src\warehouse\Mozu\1.0\MozuTest\bin\Debug\System.Net.Http.Formatting.xml
-C:\src\warehouse\Mozu\1.0\MozuTest\bin\Debug\Noesis.Javascript.dll
